@@ -5,6 +5,7 @@ import android.view.View;
 
 import com.crashlytics.android.Crashlytics;
 import com.facebook.react.ReactApplication;
+import com.smartech.reactnative.SMTSmartechReactNativePackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.smartech.reactnative.SMTSmartechReactNativePackage;
 import com.facebook.react.ReactNativeHost;
@@ -31,8 +32,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new RNGestureHandlerPackage(),
-            new SMTSmartechReactNativePackage()
+            new SMTSmartechReactNativePackage(),
+            new RNGestureHandlerPackage()
       );
     }
 

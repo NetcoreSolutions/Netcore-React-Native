@@ -1,14 +1,6 @@
 import React, { Component } from "react";
-import {
-  Alert,
-  AsyncStorage,
-  StyleSheet,
-  Text,
-  TextInput,
-  View
-} from "react-native";
+import {Alert, AsyncStorage, StyleSheet, Text, TextInput, View } from "react-native";
 import Button from "./styling/Button";
-
 const NetcoreSDK = require("smartech-react-native");
 
 export class Login extends Component<Props> {
@@ -36,6 +28,7 @@ export class Login extends Component<Props> {
           style={styles.input}
         />
         <View>{this.checkIdentity()}</View>
+        <View>{this.getCustomData()}</View>
         <Button onPress={this.setIdentity}>Log In</Button>
         <Button onPress={this.setSkip}>Skip</Button>
       </View>
@@ -79,6 +72,10 @@ export class Login extends Component<Props> {
   setSkip = () => {
     const { navigate } = this.props.navigation;
     navigate("HomeScreen", { name: "Home Screen" });
+  };
+ 
+  getCustomData = () => {
+    console.log("getCustomData->" + JSON.stringify(this.props));
   };
 }
 const styles = StyleSheet.create({

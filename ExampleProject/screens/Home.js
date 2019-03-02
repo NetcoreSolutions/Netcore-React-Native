@@ -31,7 +31,6 @@ export class Home extends Component<Props> {
 
           <Button onPress={this.callOther}>Other Functions</Button>
           <Button onPress={this.callCustom}>Custom Data</Button>
-
           <Button onPress={this.callLogOut}>Log Out</Button>
           <Text style={styles.welcome} />
         </ScrollView>
@@ -79,6 +78,10 @@ export class Home extends Component<Props> {
   callCustom = () => {
     const { navigate } = this.props.navigation;
     navigate("CustomScreen", { name: "Custom Screen" });
+  };
+  callNotifications = () => {
+    const { navigate } = this.props.navigation;
+    navigate("NotificationsScreen", { name: "Notifications Screen" });
   };
   callLogOut = () => {
     const { navigate } = this.props.navigation;

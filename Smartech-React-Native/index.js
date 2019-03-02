@@ -67,6 +67,7 @@ const Smartech = {
   track: (eventName, eventValue) => {
     SMTSmartechReactNative.track(eventName, eventValue);
   },
+
   setUserLocation: (latitude, longitude) => {
     SMTSmartechReactNative.setUserLocation(latitude, longitude);
   },
@@ -97,6 +98,18 @@ const Smartech = {
     catch (e) {
       throw e;
     }
+  },
+
+
+  // yet to change in promise
+  getNotificationsiOS: async (callback) => {
+    SMTSmartechReactNative.getNotifications((error, notifications) => {
+      if (error) {
+        console.error(error);
+      } else {
+        callback(notifications);
+      }
+    });
   },
 
   getNotifications: async notificationCount => {

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import Button from './styling/Button';
 
-const NetcoreSDK = require('smartech-react-native');
+const NetcoreSDK = require("smartech-react-native");
 
 const mypayloadata = {
     name: 'Galaxy',
@@ -61,6 +61,7 @@ export class Custom extends Component<Props> {
     console.log(NAME, DATA, DATA1);
 
     NetcoreSDK.track(NAME.trim(), mypayloadata);
+    NetcoreSDK.track(NAME.trim(), JSON.parse(DATA1));
   };
 }
 

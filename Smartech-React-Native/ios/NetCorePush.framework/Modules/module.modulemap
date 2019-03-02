@@ -1,0 +1,6 @@
+framework module NetCorePush {
+  umbrella header "NetCorePush.h"
+
+  export *
+  module * { export * }
+}

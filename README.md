@@ -1,3 +1,4 @@
+
 # Smartech React Native SDK
 
 ## Install and Integration
@@ -12,6 +13,9 @@
 
 -  [Smartech Android SDK Integration guide](https://docs.netcoresmartech.com/docs/android-sdk)
 
+-  [Smartech iOS SDK Integration guide](https://docs.netcoresmartech.com/docs/ios-sdk-integration)
+
+
 ## Example JS Usage
 
 ### Grab a reference
@@ -25,18 +29,20 @@ In order to identify a user, set unique user identity by adding given snippet as
 
 ```javascript
 smartech.setIdentity(<unique_user_identity>)
-	.then(result => {
-		//Your code here
-	}).catch(reason => console.log(reason));
+    .then(result => {
+    //Your code here
+}).catch(reason => console.log(reason));
+
 ```
 #### To clear user identity
 In order to wipe out user identity from the SDK, add given snippet as per the requirement.
 
 ```javascript
 smartech.clearIdentity()
-	.then(result => {
-		//Your code here
-	}).catch(reason => console.log(reason));
+    .then(result => {
+    //Your code here
+}).catch(reason => console.log(reason));
+
 ```
 
 #### To capture user login
@@ -44,9 +50,10 @@ To capture login activity of the user, add given snippet inside the login file o
 
 ```javascript
 smartech.login(<unique_user_identity>)
-	.then(result => {
-		//Your code here
-	}).catch(reason => console.log(reason));
+    .then(result => {
+    //Your code here
+}).catch(reason => console.log(reason));
+
 ```
 
 #### To capture user logout
@@ -57,12 +64,13 @@ To capture logout activity of the user, add given snippet inside your file when 
 smartech.logout()
 	.then(result => {
 		//Your code here
-	}).catch(reason => console.log(reason));
+}).catch(reason => console.log(reason));
 
 smartech.clearIdentity()
-	.then(result => {
-		//Your code here
-	}).catch(reason => console.log(reason));
+    .then(result => {
+    //Your code here
+}).catch(reason => console.log(reason));
+
 ```
 ****Note:​​**** Avoid calling **clearIdentity()** method if one wants to track user activity even if user has logged out of the application.
 
@@ -74,12 +82,14 @@ smartech.track(<event_name>, <variable_name>);
 
 E.g.
 const payload =  {
-	name: 'Galaxy',
-	description: '20gram bars',
-	id: '1'
+    name: 'Galaxy',
+    description: '20gram bars',
+    id: '1'
 };
 smartech.track("Add To Cart",payload);
 ```
+
+**Note​​:** Keep the key name **payload** only for tracking the custom events.
 
 #### To capture user attributes
 To capture and map user attributes, add given snippet as per the requirement.
@@ -91,7 +101,7 @@ smartech.profile(<profile_object>)
 	})
 	.catch(reason => {
 		//Handle error here
-	});
+});
 E.g.
 const profile_data =  {
 	NAME: "User Name",
@@ -100,12 +110,12 @@ const profile_data =  {
 	MOBILE: "4545748"
 };
 smartech.profile(profile_data)
-	.then(value => {
-		//Your code here
-	})
-	.catch(reason => {
-		//Handle error here
-	});
+    .then(value => {
+    //Your code here
+    })
+    .catch(reason => {
+    //Handle error here
+});
 ```
 **Note:** Use attribute name in capital letters as shown above.
 
@@ -113,15 +123,25 @@ smartech.profile(profile_data)
 
 To fetch delivered push notifications, add given snippet as per the requirement.
 
-```javascript
-smartech.getNotifications(<count>)
-	.then(value => {
-		value = JSON.stringify(value);
-	        //Your code here
-	}).catch(reason => console.log(reason));
-```
 
 **Note:** The method returns a **JSON** of delivered push notifications for the user.
+
+**For Android:**
+```javascript
+smartech.getNotifications(<count>)
+    .then(value => {
+    value = JSON.stringify(value);
+    //Your code here
+}).catch(reason => console.log(reason));
+```
+
+**For iOS:**
+```javascript
+smartech.getNotificationsiOS(value => {
+//Your code here
+})
+```
+****Note:**** The method returns a **JSON** of delivered push notifications for the user.
 
 #### To opt out user from being tracked (GDPR Policy)
 
@@ -130,6 +150,7 @@ If the end user wants to opt out of being tracked, add given snippet as per the 
 ```javascript
 smartech.optOut(<boolean_flag>);
 ```
+
 
 **Note​​:** The method accepts a boolean value.
 
@@ -149,21 +170,25 @@ smartech.setUserLocation(<double_lat>, <double_long>);
 
 1) The method mentioned above accepts 2 parameters including context, latitude & longitude. **Data type of ‘latitude’ & ‘longitude’ should compulsorily be 'Float'**. In case if any parameter is null, SDK will not be able to persist user location.
 
+2) This method is not for **iOS**.
+
 #### To get GUID of the user
 
 To obtain GUID of the user from the SDK, add given snippet as per the requirement.
 ```javascript
 smartech.getGUID()
     .then(value => {
-		//Your code here
-    }).catch(reason => console.log(reason));
+    //Your code here
+}).catch(reason => console.log(reason));
+
 ```
 #### To get FCM token of the user
 
 To obtain the FCM token of the user from the SDK, add given snippet as per the requirement.
 ```javascript
 smartech.getPushToken()
-	.then(value => {
-		//Your code here
-	}).catch(reason => console.log(reason));
+    .then(value => {
+    //Your code here
+}).catch(reason => console.log(reason));
 ```
+

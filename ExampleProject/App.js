@@ -14,14 +14,15 @@ import Home from './screens/Home';
 import Profile from './screens/Profile';
 import Other from './screens/Other';
 import Custom from './screens/Custom';
+import Notifications from './screens/Notifications';
 
 const AppNavigator = createStackNavigator({
-  LoginScreen: { screen: Login },
+  LoginScreen: { screen: Login, params: { screenProps: JSON.stringify(this.props)} },
   HomeScreen: { screen: Home },
   ProfileScreen: { screen: Profile },
   OtherScreen: { screen: Other },
-  CustomScreen: { screen: Custom }
+  CustomScreen: { screen: Custom },
+  NotificationsScreen : {screen: Notifications}
 });
 const App = createAppContainer(AppNavigator);
-
 export default App;

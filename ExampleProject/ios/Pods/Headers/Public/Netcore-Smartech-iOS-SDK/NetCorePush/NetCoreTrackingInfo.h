@@ -1,0 +1,1 @@
+../../../../Netcore-Smartech-iOS-SDK/NetCorePush.framework/Headers/NetCoreTrackingInfo.h

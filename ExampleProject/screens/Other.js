@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Alert, StyleSheet, TextInput, View, Platform } from 'react-native';
 import Button from './styling/Button';
 
-const NetcoreSDK = require('smartech-react-native');
+const NetcoreSDK = require("smartech-react-native");
 
 export class Other extends Component<Props> {
   constructor(props) {

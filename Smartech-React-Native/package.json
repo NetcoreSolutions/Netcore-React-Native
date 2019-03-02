@@ -1,7 +1,7 @@
 
 {
   "name": "smartech-react-native",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Smartech React Native SDK.",
   "main": "index.js",
   "scripts": {
