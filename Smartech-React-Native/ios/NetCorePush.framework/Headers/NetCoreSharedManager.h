@@ -5,8 +5,7 @@
  
  @author Netcore Solutions
  @copyright  2019 Netcore Solutions
- @version    2.3.3
- */
+ @version    2.3.4 */
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>

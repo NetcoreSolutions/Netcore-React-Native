@@ -47,7 +47,7 @@ RCT_EXPORT_METHOD(setUserLocation:(nonnull NSNumber *)latitude:(nonnull NSNumber
 
 RCT_EXPORT_METHOD(track:(NSString *)eventName
                   andValue:(NSDictionary  *)eventValue) {
-    [[NetCoreAppTracking sharedInstance] trackEventWithCustomPayload:eventName Payload:(NSMutableDictionary *)[eventValue[@"payload"] mutableCopy]  Block:^(NSInteger statusCode) {
+    [[NetCoreAppTracking sharedInstance] trackEventWithCustomPayload:eventName Payload:(NSMutableDictionary *)eventValue  Block:^(NSInteger statusCode) {
     }];
 }
 
@@ -68,7 +68,7 @@ RCT_EXPORT_METHOD(profile:(NSDictionary *)profileDetails
                   profileResolver:(RCTPromiseResolveBlock)resolve
                   profileRejecter:(RCTPromiseRejectBlock)reject) {
     
-    [[NetCoreInstallation sharedInstance]netCoreProfilePush:[[NetCoreSharedManager sharedInstance]getIdentity] Payload:(NSMutableDictionary *)[profileDetails[@"payload"] mutableCopy] Block:^(NSInteger statusCode) {
+    [[NetCoreInstallation sharedInstance]netCoreProfilePush:[[NetCoreSharedManager sharedInstance]getIdentity] Payload:(NSMutableDictionary *)profileDetails Block:^(NSInteger statusCode) {
         if(statusCode == 200) {
             resolve(@TRUE);
         } else {

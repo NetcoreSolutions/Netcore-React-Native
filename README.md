@@ -1,4 +1,5 @@
 
+
 # Smartech React Native SDK
 
 ## Install and Integration
@@ -18,13 +19,13 @@
 
 ## Example JS Usage
 
-### Grab a reference
+### Grab a reference (iOS and Android)
 
 ```javascript
 const smartech = require('smartech-react-native');
 ```
 
-#### To set user identity
+#### To set user identity  (iOS and Android)
 In order to identify a user, set unique user identity by adding given snippet as per the requirement.
 
 ```javascript
@@ -34,7 +35,7 @@ smartech.setIdentity(<unique_user_identity>)
 }).catch(reason => console.log(reason));
 
 ```
-#### To clear user identity
+#### To clear user identity  (iOS and Android)
 In order to wipe out user identity from the SDK, add given snippet as per the requirement.
 
 ```javascript
@@ -45,7 +46,7 @@ smartech.clearIdentity()
 
 ```
 
-#### To capture user login
+#### To capture user login  (iOS and Android)
 To capture login activity of the user, add given snippet inside the login file of your project when the user gets logged in successfully.
 
 ```javascript
@@ -56,7 +57,7 @@ smartech.login(<unique_user_identity>)
 
 ```
 
-#### To capture user logout
+#### To capture user logout  (iOS and Android)
 
 To capture logout activity of the user, add given snippet inside your file when the user gets logged out successfully.
 
@@ -74,7 +75,7 @@ smartech.clearIdentity()
 ```
 ****Note:​​**** Avoid calling **clearIdentity()** method if one wants to track user activity even if user has logged out of the application.
 
-#### To capture custom activity
+#### To capture custom activity  (iOS and Android)
 
 To capture custom activity performed by the user, add given snippet as per the requirement.
 ```javascript
@@ -91,7 +92,7 @@ smartech.track("Add To Cart",payload);
 
 **Note​​:** Keep the key name **payload** only for tracking the custom events.
 
-#### To capture user attributes
+#### To capture user attributes  (iOS and Android)
 To capture and map user attributes, add given snippet as per the requirement.
 
 ```javascript
@@ -119,7 +120,7 @@ smartech.profile(profile_data)
 ```
 **Note:** Use attribute name in capital letters as shown above.
 
-#### To fetch delivered push notifications
+#### To fetch delivered push notifications 
 
 To fetch delivered push notifications, add given snippet as per the requirement.
 
@@ -143,7 +144,7 @@ smartech.getNotificationsiOS(value => {
 ```
 ****Note:**** The method returns a **JSON** of delivered push notifications for the user.
 
-#### To opt out user from being tracked (GDPR Policy)
+#### To opt out user from being tracked (GDPR Policy)  (iOS and Android)
 
 If the end user wants to opt out of being tracked, add given snippet as per the requirement.
 
@@ -159,7 +160,7 @@ smartech.optOut(<boolean_flag>);
 - If an end user wants to opt in, the flag should be passed as **false**. Once the user opts in, SDK will be able to track that particular user further and next communications will be received by that user.
 
 
-#### To implement location tracking
+#### To implement location tracking (Android)
 
 In order to track user location and pass it further to Smartech, add given snippet as per the requirement.
 
@@ -172,7 +173,7 @@ smartech.setUserLocation(<double_lat>, <double_long>);
 
 2) This method is not for **iOS**.
 
-#### To get GUID of the user
+#### To get GUID of the user  (iOS and Android)
 
 To obtain GUID of the user from the SDK, add given snippet as per the requirement.
 ```javascript
@@ -182,9 +183,9 @@ smartech.getGUID()
 }).catch(reason => console.log(reason));
 
 ```
-#### To get FCM token of the user
+#### To get device token of the user  (iOS and Android)
 
-To obtain the FCM token of the user from the SDK, add given snippet as per the requirement.
+To obtain the FCM token for Android and APNS token for iOS of the user, add given snippet as per the requirement.
 ```javascript
 smartech.getPushToken()
     .then(value => {
