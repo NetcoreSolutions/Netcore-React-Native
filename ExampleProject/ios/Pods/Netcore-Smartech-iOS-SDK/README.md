@@ -5,7 +5,6 @@
 Here's a quick run through on getting started with Netcore SDK in Swift, for detailed integration steps visit the [Official Docs.](https://docs.netcoresmartech.com/docs/ios-sdk-integration)
 
 
-
 ## Integration using CocoaPod
 1. Install CocoaPods on your computer.
 
@@ -26,7 +25,6 @@ pod install
 5. Add Following capability inside your application
 ```swift
 Push Notification
-Keychain
 Background Mode -> Remote Notification
 App Groups
 ```
@@ -48,7 +46,6 @@ JavaScriptCore
 4. Add Following capability inside your application
 ```swift
 Push Notification
-Keychain
 Background Mode -> Remote Notification
 App Groups
 ```
@@ -99,18 +96,24 @@ func application ( _ application : UIApplication, didReceiveRemoteNotification u
 func application (_ application : UIApplication , didReceive notification : UILocalNotification ){
     NetCorePushTaskManager.sharedInstance().didReceiveLocalNotification(notification.userInfo)
 }
+
 ```
+
 ```swift
-// called when application is open when user click on notification
+// Adding UNUserNotificationCenter Delegate Method (v2.3.6 onwards)
 extension AppDelegate: UNUserNotificationCenterDelegate {
+@available ( iOS 10.0 , * )
+func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+    completionHandler(UNNotificationPresentationOptions.alert);
+}
 
 @objc (userNotificationCenter: didReceiveNotificationResponse :withCompletionHandler:)
-@available ( iOS 10.0 , * )
+
 func userNotificationCenter ( _ center : UNUserNotificationCenter, didReceive
 response : UNNotificationResponse, withCompletionHandler completionHandler :
 @escaping () -> Void ) {
         // perform notification received/click action as per third party SDK as per their document
-        NetCorePushTaskManager.sharedInstance().userNotificationdidReceive(response)
+        NetCorePushTaskManager.sharedInstance()?.didReceiveRemoteNotification(response.notification.request.content.userInfo);
     }
 }
 ```
@@ -123,6 +126,37 @@ func application(_ application: UIApplication, open url: URL, sourceApplication:
             // handle URL link here
         }
     return true
+}
+```
+
+## To Setting Universal Link
+You need to pass the universal link value to the SDK that you have added in your Capabilities -> Associated Domains section
+Eg. applinks:https://www.netcoresmartech.com then enter only domain name as https://www.netcoresmartech.com, you can pass multiple domain names.
+```swift
+NetCoreSharedManager.sharedInstance()?.setAssociateDomain(["type-your-universal-link"]);
+```
+
+## To Handle Deep Link and Custom Payload (2.3.6 onwards)
+```swift
+func handleSmartechDeeplink(_ options: SMTDeeplink?) {
+    if options?.deepLinkType == SMTDeeplinkType.url {
+        // When Deeplink is WebURL
+    }
+    else if options?.deepLinkType == SMTDeeplinkType.universalLink {
+        // When Deeplink is Universal-link
+    }
+    else if options?.deepLinkType == SMTDeeplinkType.deeplink {
+        // When Deeplink is URLSchemes link.
+    }
+    else if options?.deepLinkType == SMTDeeplinkType.app {
+        // When Deeplink is Empty.
+    }
+
+    // options?.customPayload is send from notification.
+
+    // options?.userInfo is notification Pyaload.
+
+
 }
 ```
 
@@ -161,6 +195,7 @@ responseInfo: [AnyHashable : Any], completionHandler: @escaping () -> Void) {
 
 }
 ```
+
 
 ## For Login Activity
 ```swift
@@ -280,6 +315,44 @@ override func didReceive(_ request: UNNotificationRequest, withContentHandler co
 override func serviceExtensionTimeWillExpire() { 
     NetCoreNotificationService.sharedInstance().serviceExtensionTimeWillExpire() 
 }
+```
+
+
+## Notification Center Feature
+
+**Note:​​**  To use Notification Center minimum Netcore SDK version should be **2.3.5**. 
+
+To use Notification Center feature in your app, please follow the steps mentioned below:
+
+1. Copy Notification Center files in your project. (SmartechNC folder)
+2. Create Bridge file in existing swift project if required and add Following code inside file.
+
+```objc
+#import "SmartechNotificationCenterVC.h"
+```
+
+3. Use this code to open Notification Center View Controller
+
+```swift
+let center = UIStoryboard.init(name: "SmartechNC", bundle: nil).instantiateViewController(withIdentifier: "SmartechNotificationCenterVC")
+self.navigationController?.pushViewController(center, animated: true)
+```
+5. To get all the delivered notifications to the device.
+```swift
+let array = SMTNotification.getNotifications()
+```
+4. To get last X number of delivered notifications (the below code will fetch the last 10 notifications).
+```swift
+let array = SMTNotification.getNotificationsWithCount(10)
+```
+5. To get Unread delivered notification count.
+```swift
+let count = SMTNotification.getUnreadNotificationsCount();
+```
+
+
+
+
 
 ```
 ***NOTE: For more clarity on this, please refer above <[SDK-Integration-Steps.pdf](https://github.com/NetcoreSolutions/Smartech-ios-sdk/blob/master/ObjectiveC-and-swift-Integration-Steps.pdf)>**

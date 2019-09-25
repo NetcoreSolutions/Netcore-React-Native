@@ -19,8 +19,7 @@
 @implementation NotificationService
 
 - (void)didReceiveNotificationRequest:(UNNotificationRequest *)request withContentHandler:(void (^)(UNNotificationContent * _Nonnull))contentHandler {
-  [[NetCoreNotificationService sharedInstance] setUpAppGroup:@""];
-  
+  [[NetCoreNotificationService sharedInstance] setUpAppGroup:@"<APP_GROUP>"];
   [[NetCoreNotificationService sharedInstance] didReceiveNotificationRequest:request withContentHandler:^(UNNotificationContent *contentToDeliver) {
     contentHandler(contentToDeliver);
   }];

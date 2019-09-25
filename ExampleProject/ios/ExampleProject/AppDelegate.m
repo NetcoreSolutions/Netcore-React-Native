@@ -6,12 +6,15 @@
  */
 
 #import "AppDelegate.h"
+#import "DeeplinkManager.h"
 
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 #import <NetCorePush/NetCorePush.h>
+#import <UserNotifications/UserNotifications.h>
+#import <UserNotificationsUI/UserNotificationsUI.h>
 
-@interface AppDelegate () <NetCorePushTaskManagerDelegate>
+@interface AppDelegate () <UNUserNotificationCenterDelegate, NetCorePushTaskManagerDelegate>
 @end
 
 @implementation AppDelegate
@@ -31,9 +34,8 @@
                                                initialProperties:nil
                                                    launchOptions:launchOptions];
   
-  [[NetCoreSharedManager sharedInstance] setUpAppGroup:@""];
-  
-  [[NetCoreSharedManager sharedInstance] handleApplicationLaunchEvent:launchOptions forApplicationId:@""];
+  [[NetCoreSharedManager sharedInstance] setUpAppGroup:@"<APP_GROUP>"];
+  [[NetCoreSharedManager sharedInstance] handleApplicationLaunchEvent:launchOptions forApplicationId:@"<APP_ID>"];
   [NetCorePushTaskManager sharedInstance].delegate = (id)self;
   
   
@@ -47,28 +49,30 @@
   return YES;
 }
 
--(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-  [[NetCoreInstallation sharedInstance] netCorePushRegisteration:[[NetCoreSharedManager sharedInstance]getIdentity] withDeviceToken:deviceToken Block:^(NSInteger statusCode) {
-    
-  }];
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+  [[NetCoreInstallation sharedInstance] netCorePushRegisteration:[[NetCoreSharedManager sharedInstance] getIdentity] withDeviceToken:deviceToken Block:nil];
   [[NetCoreSharedManager sharedInstance] printDeviceToken];
 }
 
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
   [[NetCorePushTaskManager sharedInstance] didReceiveRemoteNotification:userInfo];
+  completionHandler(UIBackgroundFetchResultNewData);
 }
 
+#pragma mark UNUserNotificationCenterDelegate
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler {
+  [[NetCorePushTaskManager sharedInstance] userNotificationWillPresentNotification:notification];
+  completionHandler(UNNotificationPresentationOptionAlert | UNNotificationPresentationOptionBadge | UNNotificationPresentationOptionSound);
+}
 
-- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
-{
-  return true;
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler {
+  [[NetCorePushTaskManager sharedInstance] didReceiveRemoteNotification:response.notification.request.content.userInfo];
+  completionHandler();
 }
-- (void)handleNotificationOpenAction:(NSDictionary *)userInfo DeepLinkType:(NSString *)strType
-{
-  
+
+//For Handling deep link
+- (void)handleSmartechDeeplink:(SMTDeeplink *_Nullable)options {
+  [DeeplinkManager emitEventWithDeeplink:options.deepLink customPayload:options.customPayload andPayload:options.userInfo];
 }
-- (void)handleNotificationCustomPayload:(NSDictionary *)payload
-{
-  
-}
+
 @end

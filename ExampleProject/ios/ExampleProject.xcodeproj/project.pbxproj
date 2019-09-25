@@ -33,7 +33,7 @@
 		AE418D77222665E400433D55 /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE418D76222665E400433D55 /* NotificationViewController.m */; };
 		AE418D7A222665E400433D55 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE418D78222665E400433D55 /* MainInterface.storyboard */; };
 		AE418D7E222665E400433D55 /* Content Extention.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AE418D6F222665E400433D55 /* Content Extention.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		ECBF2F7B21F4A083003CEB49 /* libSMTSmartechReactNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECBF2F7A21F49F31003CEB49 /* libSMTSmartechReactNative.a */; };
+		CAB64018233B8E070072ADA7 /* DeeplinkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB64017233B8E070072ADA7 /* DeeplinkManager.m */; };
 		FB0A4D7EFE4531D9A398FC9C /* libPods-Service Extention.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2A8BA418FD7C4F589F804C /* libPods-Service Extention.a */; };
 /* End PBXBuildFile section */
 
@@ -297,6 +297,13 @@
 			remoteGlobalIDString = 358F4ED71D1E81A9004DF814;
 			remoteInfo = RCTBlob;
 		};
+		AE1AF08C229BC31A009CE71B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CBD50AC638B949CE8C87477B /* RNGestureHandler.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B5C32A36220C603B000FFB8D;
+			remoteInfo = "RNGestureHandler-tvOS";
+		};
 		AE418D64222665D900433D55 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
@@ -397,6 +404,10 @@
 		AE418D7B222665E400433D55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE9427A8222A60420039A001 /* ExampleProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = ExampleProject.entitlements; path = ExampleProject/ExampleProject.entitlements; sourceTree = "<group>"; };
 		BC2B7B37FF1CE5C688448972 /* Pods-Content Extention.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Content Extention.release.xcconfig"; path = "Pods/Target Support Files/Pods-Content Extention/Pods-Content Extention.release.xcconfig"; sourceTree = "<group>"; };
+		CA5C3B2E233B872D0045B5EC /* Content Extention.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Content Extention.entitlements"; sourceTree = "<group>"; };
+		CA5C3B2F233B87320045B5EC /* Service Extention.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Service Extention.entitlements"; sourceTree = "<group>"; };
+		CAB63FEF233B8E070072ADA7 /* DeeplinkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeeplinkManager.h; path = ExampleProject/DeeplinkManager.h; sourceTree = "<group>"; };
+		CAB64017233B8E070072ADA7 /* DeeplinkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeeplinkManager.m; path = ExampleProject/DeeplinkManager.m; sourceTree = "<group>"; };
 		CBD50AC638B949CE8C87477B /* RNGestureHandler.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNGestureHandler.xcodeproj; path = "../node_modules/react-native-gesture-handler/ios/RNGestureHandler.xcodeproj"; sourceTree = "<group>"; };
 		D2D8A0A3512C6D189B33EEE0 /* Pods-ExampleProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExampleProjectTests/Pods-ExampleProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		DC2D89D1ED584B17A3967A21 /* libRNGestureHandler.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNGestureHandler.a; sourceTree = "<group>"; };
@@ -410,7 +421,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECBF2F7B21F4A083003CEB49 /* libSMTSmartechReactNative.a in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
 				11D1A2F320CAFA9E000508D9 /* libRCTAnimation.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
@@ -531,6 +541,8 @@
 		13B07FAE1A68108700A75B9A /* ExampleProject */ = {
 			isa = PBXGroup;
 			children = (
+				CAB63FEF233B8E070072ADA7 /* DeeplinkManager.h */,
+				CAB64017233B8E070072ADA7 /* DeeplinkManager.m */,
 				AE9427A8222A60420039A001 /* ExampleProject.entitlements */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -685,6 +697,7 @@
 		AE418D5F222665D900433D55 /* Service Extention */ = {
 			isa = PBXGroup;
 			children = (
+				CA5C3B2F233B87320045B5EC /* Service Extention.entitlements */,
 				AE418D60222665D900433D55 /* NotificationService.h */,
 				AE418D61222665D900433D55 /* NotificationService.m */,
 				AE418D63222665D900433D55 /* Info.plist */,
@@ -695,6 +708,7 @@
 		AE418D74222665E400433D55 /* Content Extention */ = {
 			isa = PBXGroup;
 			children = (
+				CA5C3B2E233B872D0045B5EC /* Content Extention.entitlements */,
 				AE418D75222665E400433D55 /* NotificationViewController.h */,
 				AE418D76222665E400433D55 /* NotificationViewController.m */,
 				AE418D78222665E400433D55 /* MainInterface.storyboard */,
@@ -716,6 +730,7 @@
 			isa = PBXGroup;
 			children = (
 				ECBF2F7521F49F31003CEB49 /* libRNGestureHandler.a */,
+				AE1AF08D229BC31A009CE71B /* libRNGestureHandler-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -802,7 +817,11 @@
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = Y344Y7796A;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
@@ -814,12 +833,22 @@
 					AE418D5D222665D900433D55 = {
 						CreatedOnToolsVersion = 10.1;
 						DevelopmentTeam = Y344Y7796A;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					AE418D6E222665E400433D55 = {
 						CreatedOnToolsVersion = 10.1;
 						DevelopmentTeam = Y344Y7796A;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -828,6 +857,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -1161,6 +1191,13 @@
 			remoteRef = ADBDB9261DFEBF0700ED6528 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		AE1AF08D229BC31A009CE71B /* libRNGestureHandler-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRNGestureHandler-tvOS.a";
+			remoteRef = AE1AF08C229BC31A009CE71B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		ECBF2F7521F49F31003CEB49 /* libRNGestureHandler.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1290,21 +1327,17 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ExampleProject/Pods-ExampleProject-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-ExampleProject/Pods-ExampleProject-frameworks.sh",
 				"${PODS_ROOT}/Netcore-Smartech-iOS-SDK/NetCorePush.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NetCorePush.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ExampleProject/Pods-ExampleProject-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ExampleProject/Pods-ExampleProject-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1315,6 +1348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				CAB64018233B8E070072ADA7 /* DeeplinkManager.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1383,6 +1417,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ExampleProject/ExampleProject.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = Y344Y7796A;
@@ -1399,8 +1434,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.netcore.Smartech;
+				PRODUCT_BUNDLE_IDENTIFIER = com.netcore.NetcoreApp;
 				PRODUCT_NAME = ExampleProject;
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.netcore.NetcoreApp";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1412,6 +1448,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ExampleProject/ExampleProject.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Y344Y7796A;
 				HEADER_SEARCH_PATHS = (
@@ -1427,8 +1464,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.netcore.Smartech;
+				PRODUCT_BUNDLE_IDENTIFIER = com.netcore.NetcoreApp;
 				PRODUCT_NAME = ExampleProject;
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.netcore.NetcoreApp";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -1542,18 +1580,20 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "Service Extention/Service Extention.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = Y344Y7796A;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "Service Extention/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.netcore.Smartech.Service-Extention";
+				PRODUCT_BUNDLE_IDENTIFIER = com.netcore.NetcoreApp.NetcoreNSE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.netcore.NetcoreApp.NetcoreNSE";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1569,18 +1609,20 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "Service Extention/Service Extention.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = Y344Y7796A;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "Service Extention/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.netcore.Smartech.Service-Extention";
+				PRODUCT_BUNDLE_IDENTIFIER = com.netcore.NetcoreApp.NetcoreNSE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.netcore.NetcoreApp.NetcoreNSE";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1596,18 +1638,20 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "Content Extention/Content Extention.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = Y344Y7796A;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "Content Extention/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.netcore.Smartech.Content-Extention";
+				PRODUCT_BUNDLE_IDENTIFIER = com.netcore.NetcoreApp.NetcoreNCE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.netcore.NetcoreApp.NetcoreNCE";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1623,18 +1667,20 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "Content Extention/Content Extention.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = Y344Y7796A;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "Content Extention/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.netcore.Smartech.Content-Extention";
+				PRODUCT_BUNDLE_IDENTIFIER = com.netcore.NetcoreApp.NetcoreNCE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.netcore.NetcoreApp.NetcoreNCE";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -6,14 +6,11 @@ target 'ExampleProject' do
   # use_frameworks!
 pod 'Netcore-Smartech-iOS-SDK'
   # Pods for ExampleProject
-  
- 
-
 end
+
 target 'Service Extention' do
     pod 'Netcore-Smartech-iOS-SDK'
 end
-
 
 target 'Content Extention' do
     pod 'Netcore-Smartech-iOS-SDK'

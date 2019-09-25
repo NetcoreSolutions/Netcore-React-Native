@@ -101,6 +101,11 @@ Bundle bundle = getIntent().getExtras();
 JSONObject jsonObject = new JSONObject(bundle.getString("customPayload"));
 ```
 
+## Additional Resources for Android
+
+-  [Smartech Android SDK Integration guide](https://docs.netcoresmartech.com/docs/android-sdk)
+
+
 ## iOS
 
 1. Import following file in App Delegate File
@@ -116,6 +121,11 @@ JSONObject jsonObject = new JSONObject(bundle.getString("customPayload"));
 [[NetCoreSharedManager  sharedInstance] handleApplicationLaunchEvent:launchOptions forApplicationId:@""];
 //set up push delegate
 [NetCorePushTaskManager  sharedInstance].delegate = (id)self;
+if (@available(iOS 10.0, *)) {
+    [UNUserNotificationCenter currentNotificationCenter].delegate = self;
+} else {
+    // Fallback on earlier versions
+}
 ```
 
 3. Register Device With NetCore SDK (AppDelegate file)
@@ -136,11 +146,20 @@ JSONObject jsonObject = new JSONObject(bundle.getString("customPayload"));
 
     [[NetCorePushTaskManager  sharedInstance] didReceiveRemoteNotification:userInfo];
 }
+// Adding UNUserNotificationCenter Delegate Method (v1.1.2 onwards)
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
+    completionHandler(UNNotificationPresentationOptionAlert);
+}
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
+
+    [[NetCorePushTaskManager sharedInstance] didReceiveRemoteNotification:response.notification.request.content.userInfo];
+
+    completionHandler();
+}
+
 ````
 
 ### To Handle URL Link
-
-
 
 ```objective-c
 
@@ -150,10 +169,35 @@ JSONObject jsonObject = new JSONObject(bundle.getString("customPayload"));
 
 ```
 
-### To Handle Deep Link
+## To Handle Deep Link and Custom Payload (v1.1.2 onwards)
+```objective-c
+- (void)handleSmartechDeeplink:(SMTDeeplink *)options {
+    if (options.deepLinkType == SMTDeeplinkTypeUrl) {
+        // When Deeplink is WebURL
+    }
 
+    else if (options.deepLinkType == SMTDeeplinkTypeUniversalLink) {
+        // When Deeplink is Universal-link
+    }
 
+    else if (options.deepLinkType == SMTDeeplinkTypeDeeplink) {
+        // When Deeplink is URLSchemes link.
+    }
 
+    else if (options.deepLinkType == SMTDeeplinkTypeDeeplink) {
+        // When Deeplink is Empty.
+    }
+
+    else if (options.deepLinkType == SMTDeeplinkTypeApp) {
+    }
+
+    // options.customPayload is send from notification.
+
+    // options.userInfo is notification Pyaload.
+}
+
+```
+## To Handle Deep Link(Till v1.1.1)
 ```objective-c
 
 //For Handling deep link
@@ -162,7 +206,7 @@ JSONObject jsonObject = new JSONObject(bundle.getString("customPayload"));
 }
 
 ```
-## To Handle Custom Payload
+## To Handle Custom Payload(Till v1.1.1)
 
 ```objective-c
 
@@ -172,6 +216,13 @@ JSONObject jsonObject = new JSONObject(bundle.getString("customPayload"));
 
 }
 
+```
+## To Setting Universal Link
+
+You need to pass the universal link value to the SDK that you have added in your Capabilities -> Associated Domains section Eg. applinks:https://www.netcoresmartech.com then enter only domain name as https://www.netcoresmartech.com, you can pass multiple domain names.
+
+```objective-c
+[[NetCoreSharedManager sharedInstance] setAssociateDomain:@[@"type-your-universal-link"]];
 ```
 
 ### For Rich Push Notifications
@@ -251,6 +302,9 @@ Remove all the code written in “NotificationService” implementation class.
 4) Enable “App Groups” in Content Extension too and select group with name "<group.com.CompanyName.ProductName>".
 ```
 
+## Additional Resources for iOS
+
+-  [Smartech iOS SDK Integration guide](https://docs.netcoresmartech.com/docs/ios-sdk-integration)
 
 
 #### Implementation Changes

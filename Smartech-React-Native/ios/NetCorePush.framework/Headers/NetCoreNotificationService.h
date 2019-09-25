@@ -5,13 +5,14 @@
  
  @author Netcore Solutions
  @copyright  2019 Netcore Solutions
- @version    2.3.4 */
+ @version    2.3.8 */
 
 #import <UserNotifications/UserNotifications.h>
 #import <UserNotifications/UNNotificationContent.h>
 #import <UserNotificationsUI/UserNotificationsUI.h>
 #import <UIKit/UIKit.h>
 
+API_AVAILABLE(ios(10.0))
 @interface NetCoreNotificationService : UNNotificationServiceExtension
 /*
  @Method sharedInstance:- use to return NetCoreNotificationService manage class Object
