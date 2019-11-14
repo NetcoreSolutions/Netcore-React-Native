@@ -31,7 +31,11 @@ RCT_EXPORT_MODULE();
 }
 
 + (void)emitEventWithDeeplink:(NSString *)deeplink customPayload:(NSDictionary *)customPayload andPayload:(NSDictionary *)payload {
-  NSDictionary<NSString *, id> *userInfo = @{@"deeplink": deeplink, @"customPayload": customPayload,@"userInfo":payload};
+  NSString *deeplinkString = deeplink ? deeplink : @"";
+  NSDictionary *customPayloadDictionary = customPayload ? customPayload : @{};
+  NSDictionary *payloadDictionary = payload ? payload : @{};
+  
+  NSDictionary<NSString *, id> *userInfo = @{@"deeplink": deeplinkString, @"customPayload": customPayloadDictionary,@"userInfo":payloadDictionary};
   [[NSNotificationCenter defaultCenter] postNotificationName:@"SMTDeeplink"
                                                       object:self
                                                     userInfo:userInfo];

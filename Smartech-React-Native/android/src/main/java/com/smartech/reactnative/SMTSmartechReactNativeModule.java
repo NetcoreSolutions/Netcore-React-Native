@@ -38,6 +38,7 @@ public class SMTSmartechReactNativeModule extends ReactContextBaseJavaModule {
     try {
       NetcoreSDK.setIdentity(reactContext, identity);
       promise.resolve(true);
+
     } catch (Exception e) {
       promise.reject(e);
     }
@@ -126,36 +127,60 @@ public class SMTSmartechReactNativeModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void getPushToken(Promise pushTokenCallback) {
+  public void getPushToken(Promise promise) {
     try {
       String token = NetcoreSDK.getPushToken(reactContext);
-      pushTokenCallback.resolve(token);
-
+      promise.resolve(token);
     } catch (Exception e) {
-      pushTokenCallback.reject(e);
+      promise.reject(e);
     }
   }
 
   @ReactMethod
-  public void getGUID(Promise guidPromise) {
+  public void getGUID(Promise promise) {
     try {
       String GUID = NetcoreSDK.getGUID(reactContext);
-      guidPromise.resolve(GUID);
+      promise.resolve(GUID);
     } catch (Exception e) {
-      guidPromise.reject(e);
+      promise.reject(e);
     }
   }
 
   @ReactMethod
-  public void getNotifications(int notificationCount, Promise notificationPromise) {
+  public void getNotifications(int notificationCount, Promise promise) {
     try {
       JSONArray notificationsList = NetcoreSDK.getNotifications(reactContext, notificationCount);
       WritableArray notificationWritableArray = JSONConvert.toWritableMap(notificationsList);
-      notificationPromise.resolve(notificationWritableArray);
+      promise.resolve(notificationWritableArray);
     } catch (Exception e) {
-      notificationPromise.reject(e);
+      promise.reject(e);
     }
   }
-
-
+  @ReactMethod
+  public void getUnreadNotificationsCount(Promise promise) {
+    try {
+      int notificationsCount = NetcoreSDK.getUnreadNotificationsCount(reactContext);
+      promise.resolve(notificationsCount);
+    } catch (Exception e) {
+      promise.reject(e);
+    }
+  }
+  @ReactMethod
+  public void handleNotification(ReadableMap notificationData, Promise Promise) {
+    try {
+      boolean pushFromSmartech = NetcoreSDK.handleNotification(reactContext, ConvertReadable.convertReadableMapToMap(notificationData));
+      Promise.resolve(pushFromSmartech);
+    } catch (Exception e) {
+      Promise.reject(e);
+    }
+  }
+  @ReactMethod
+  public void markNotificationAsRead(String trID, String deeplink, Promise promise) {
+    try {
+      NetcoreSDK.markNotificationAsRead(reactContext, trID, deeplink);
+      promise.resolve(true);
+    } catch (Exception e) {
+      promise.reject(e);
+    }
+  }
 }
