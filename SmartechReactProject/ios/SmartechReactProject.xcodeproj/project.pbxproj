@@ -1,0 +1,878 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
+		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
+		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		ABF6BF5B42C10A97D7089396 /* libPods-NetcoreNCE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2198BBED36D4DF832434834C /* libPods-NetcoreNCE.a */; };
+		CA0D02722361A57800DFC74B /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0D02712361A57800DFC74B /* NotificationService.m */; };
+		CA0D02762361A57800DFC74B /* NetcoreNSE.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CA0D026E2361A57800DFC74B /* NetcoreNSE.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CA0D02822361A6FC00DFC74B /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA0D02812361A6FC00DFC74B /* UserNotifications.framework */; };
+		CA0D02842361A6FC00DFC74B /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA0D02832361A6FC00DFC74B /* UserNotificationsUI.framework */; };
+		CA0D02882361A6FC00DFC74B /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0D02872361A6FC00DFC74B /* NotificationViewController.m */; };
+		CA0D028B2361A6FC00DFC74B /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA0D02892361A6FC00DFC74B /* MainInterface.storyboard */; };
+		CA0D028F2361A6FC00DFC74B /* NetcoreNCE.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CA0D02802361A6FC00DFC74B /* NetcoreNCE.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CA3DE67323796EBE000738CE /* DeeplinkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DE67123796EBD000738CE /* DeeplinkManager.m */; };
+		E83105C150CCA09923B55576 /* libPods-SmartechReactProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D337FAB7A653848EC8945EA /* libPods-SmartechReactProject.a */; };
+		F5E6EC74DBA8EF7B0F2BB3FB /* libPods-NetcoreNSE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D97D69048E6726F84ED28D6A /* libPods-NetcoreNSE.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CA0D02742361A57800DFC74B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CA0D026D2361A57800DFC74B;
+			remoteInfo = NetcoreNSE;
+		};
+		CA0D028D2361A6FC00DFC74B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CA0D027F2361A6FC00DFC74B;
+			remoteInfo = NetcoreNCE;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CA0D027A2361A57800DFC74B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CA0D028F2361A6FC00DFC74B /* NetcoreNCE.appex in Embed App Extensions */,
+				CA0D02762361A57800DFC74B /* NetcoreNSE.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
+		10D9ECABB6C30324690B2CF0 /* Pods-NetcoreNCE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetcoreNCE.release.xcconfig"; path = "Target Support Files/Pods-NetcoreNCE/Pods-NetcoreNCE.release.xcconfig"; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* SmartechReactProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartechReactProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = SmartechReactProject/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = SmartechReactProject/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SmartechReactProject/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SmartechReactProject/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = SmartechReactProject/main.m; sourceTree = "<group>"; };
+		14B770CA03A760A516339ED0 /* Pods-SmartechReactProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartechReactProject.debug.xcconfig"; path = "Target Support Files/Pods-SmartechReactProject/Pods-SmartechReactProject.debug.xcconfig"; sourceTree = "<group>"; };
+		209BF20325CB337D5FE307F6 /* libPods-SmartechReactProject-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmartechReactProject-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2198BBED36D4DF832434834C /* libPods-NetcoreNCE.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NetcoreNCE.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		364663FBA8AA1B9CAA64B64B /* libPods-SmartechReactProjectTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmartechReactProjectTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		516E921D974877ACB594865B /* Pods-NetcoreNSE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetcoreNSE.debug.xcconfig"; path = "Target Support Files/Pods-NetcoreNSE/Pods-NetcoreNSE.debug.xcconfig"; sourceTree = "<group>"; };
+		5B73A60CDEA452A9D0F52BEF /* Pods-SmartechReactProject-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartechReactProject-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-SmartechReactProject-tvOSTests/Pods-SmartechReactProject-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6D337FAB7A653848EC8945EA /* libPods-SmartechReactProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmartechReactProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EC74C04BBB7E4B62208D4C6 /* Pods-SmartechReactProject-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartechReactProject-tvOS.release.xcconfig"; path = "Target Support Files/Pods-SmartechReactProject-tvOS/Pods-SmartechReactProject-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		BCFAFF6D517244741D4E56A2 /* Pods-SmartechReactProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartechReactProject.release.xcconfig"; path = "Target Support Files/Pods-SmartechReactProject/Pods-SmartechReactProject.release.xcconfig"; sourceTree = "<group>"; };
+		C287999C87B10F11F1A4CB95 /* libPods-SmartechReactProject-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmartechReactProject-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2BB48F55F86D592003FDBE5 /* Pods-SmartechReactProject-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartechReactProject-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-SmartechReactProject-tvOS/Pods-SmartechReactProject-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		C3597B2DF0DA75A5EFAAF6FD /* Pods-SmartechReactProject-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartechReactProject-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-SmartechReactProject-tvOSTests/Pods-SmartechReactProject-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		C66E68D3F21923694750B683 /* Pods-NetcoreNSE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetcoreNSE.release.xcconfig"; path = "Target Support Files/Pods-NetcoreNSE/Pods-NetcoreNSE.release.xcconfig"; sourceTree = "<group>"; };
+		CA0D02692361A54500DFC74B /* SmartechReactProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = SmartechReactProject.entitlements; path = SmartechReactProject/SmartechReactProject.entitlements; sourceTree = "<group>"; };
+		CA0D026E2361A57800DFC74B /* NetcoreNSE.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NetcoreNSE.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA0D02702361A57800DFC74B /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
+		CA0D02712361A57800DFC74B /* NotificationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
+		CA0D02732361A57800DFC74B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA0D027B2361A68400DFC74B /* NetcoreNSE.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NetcoreNSE.entitlements; sourceTree = "<group>"; };
+		CA0D02802361A6FC00DFC74B /* NetcoreNCE.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NetcoreNCE.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA0D02812361A6FC00DFC74B /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		CA0D02832361A6FC00DFC74B /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		CA0D02862361A6FC00DFC74B /* NotificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
+		CA0D02872361A6FC00DFC74B /* NotificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
+		CA0D028A2361A6FC00DFC74B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		CA0D028C2361A6FC00DFC74B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA0D02932361A71F00DFC74B /* NetcoreNCE.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NetcoreNCE.entitlements; sourceTree = "<group>"; };
+		CA3DE67123796EBD000738CE /* DeeplinkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeeplinkManager.m; path = SmartechReactProject/DeeplinkManager.m; sourceTree = "<group>"; };
+		CA3DE67223796EBE000738CE /* DeeplinkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeeplinkManager.h; path = SmartechReactProject/DeeplinkManager.h; sourceTree = "<group>"; };
+		D97D69048E6726F84ED28D6A /* libPods-NetcoreNSE.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NetcoreNSE.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		F156B356FB98C8E4BFD5723F /* Pods-NetcoreNCE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetcoreNCE.debug.xcconfig"; path = "Target Support Files/Pods-NetcoreNCE/Pods-NetcoreNCE.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		13B07F8C1A680F5B00A75B9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E83105C150CCA09923B55576 /* libPods-SmartechReactProject.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA0D026B2361A57800DFC74B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5E6EC74DBA8EF7B0F2BB3FB /* libPods-NetcoreNSE.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA0D027D2361A6FC00DFC74B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA0D02842361A6FC00DFC74B /* UserNotificationsUI.framework in Frameworks */,
+				CA0D02822361A6FC00DFC74B /* UserNotifications.framework in Frameworks */,
+				ABF6BF5B42C10A97D7089396 /* libPods-NetcoreNCE.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		13B07FAE1A68108700A75B9A /* SmartechReactProject */ = {
+			isa = PBXGroup;
+			children = (
+				CA3DE67223796EBE000738CE /* DeeplinkManager.h */,
+				CA3DE67123796EBD000738CE /* DeeplinkManager.m */,
+				CA0D02692361A54500DFC74B /* SmartechReactProject.entitlements */,
+				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
+				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
+				13B07FB01A68108700A75B9A /* AppDelegate.m */,
+				13B07FB51A68108700A75B9A /* Images.xcassets */,
+				13B07FB61A68108700A75B9A /* Info.plist */,
+				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
+				13B07FB71A68108700A75B9A /* main.m */,
+			);
+			name = SmartechReactProject;
+			sourceTree = "<group>";
+		};
+		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
+				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
+				6D337FAB7A653848EC8945EA /* libPods-SmartechReactProject.a */,
+				C287999C87B10F11F1A4CB95 /* libPods-SmartechReactProject-tvOS.a */,
+				209BF20325CB337D5FE307F6 /* libPods-SmartechReactProject-tvOSTests.a */,
+				364663FBA8AA1B9CAA64B64B /* libPods-SmartechReactProjectTests.a */,
+				CA0D02812361A6FC00DFC74B /* UserNotifications.framework */,
+				CA0D02832361A6FC00DFC74B /* UserNotificationsUI.framework */,
+				2198BBED36D4DF832434834C /* libPods-NetcoreNCE.a */,
+				D97D69048E6726F84ED28D6A /* libPods-NetcoreNSE.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		83CBB9F61A601CBA00E9B192 = {
+			isa = PBXGroup;
+			children = (
+				13B07FAE1A68108700A75B9A /* SmartechReactProject */,
+				832341AE1AAA6A7D00B99B32 /* Libraries */,
+				CA0D026F2361A57800DFC74B /* NetcoreNSE */,
+				CA0D02852361A6FC00DFC74B /* NetcoreNCE */,
+				83CBBA001A601CBA00E9B192 /* Products */,
+				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				CAAF4EAB2361871500ACE557 /* Recovered References */,
+				AF5BBE34CC46ADA4BA3A1E18 /* Pods */,
+			);
+			indentWidth = 2;
+			sourceTree = "<group>";
+			tabWidth = 2;
+			usesTabs = 0;
+		};
+		83CBBA001A601CBA00E9B192 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				13B07F961A680F5B00A75B9A /* SmartechReactProject.app */,
+				CA0D026E2361A57800DFC74B /* NetcoreNSE.appex */,
+				CA0D02802361A6FC00DFC74B /* NetcoreNCE.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AF5BBE34CC46ADA4BA3A1E18 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				14B770CA03A760A516339ED0 /* Pods-SmartechReactProject.debug.xcconfig */,
+				BCFAFF6D517244741D4E56A2 /* Pods-SmartechReactProject.release.xcconfig */,
+				C2BB48F55F86D592003FDBE5 /* Pods-SmartechReactProject-tvOS.debug.xcconfig */,
+				6EC74C04BBB7E4B62208D4C6 /* Pods-SmartechReactProject-tvOS.release.xcconfig */,
+				5B73A60CDEA452A9D0F52BEF /* Pods-SmartechReactProject-tvOSTests.debug.xcconfig */,
+				C3597B2DF0DA75A5EFAAF6FD /* Pods-SmartechReactProject-tvOSTests.release.xcconfig */,
+				F156B356FB98C8E4BFD5723F /* Pods-NetcoreNCE.debug.xcconfig */,
+				10D9ECABB6C30324690B2CF0 /* Pods-NetcoreNCE.release.xcconfig */,
+				516E921D974877ACB594865B /* Pods-NetcoreNSE.debug.xcconfig */,
+				C66E68D3F21923694750B683 /* Pods-NetcoreNSE.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CA0D026F2361A57800DFC74B /* NetcoreNSE */ = {
+			isa = PBXGroup;
+			children = (
+				CA0D027B2361A68400DFC74B /* NetcoreNSE.entitlements */,
+				CA0D02702361A57800DFC74B /* NotificationService.h */,
+				CA0D02712361A57800DFC74B /* NotificationService.m */,
+				CA0D02732361A57800DFC74B /* Info.plist */,
+			);
+			path = NetcoreNSE;
+			sourceTree = "<group>";
+		};
+		CA0D02852361A6FC00DFC74B /* NetcoreNCE */ = {
+			isa = PBXGroup;
+			children = (
+				CA0D02932361A71F00DFC74B /* NetcoreNCE.entitlements */,
+				CA0D02862361A6FC00DFC74B /* NotificationViewController.h */,
+				CA0D02872361A6FC00DFC74B /* NotificationViewController.m */,
+				CA0D02892361A6FC00DFC74B /* MainInterface.storyboard */,
+				CA0D028C2361A6FC00DFC74B /* Info.plist */,
+			);
+			path = NetcoreNCE;
+			sourceTree = "<group>";
+		};
+		CAAF4EAB2361871500ACE557 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		13B07F861A680F5B00A75B9A /* SmartechReactProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "SmartechReactProject" */;
+			buildPhases = (
+				B2AD701617E2123DBA5BE7F0 /* [CP] Check Pods Manifest.lock */,
+				FD10A7F022414F080027D42C /* Start Packager */,
+				13B07F871A680F5B00A75B9A /* Sources */,
+				13B07F8C1A680F5B00A75B9A /* Frameworks */,
+				13B07F8E1A680F5B00A75B9A /* Resources */,
+				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				CA0D027A2361A57800DFC74B /* Embed App Extensions */,
+				156AE9F0760F40B4ED786CEB /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CA0D02752361A57800DFC74B /* PBXTargetDependency */,
+				CA0D028E2361A6FC00DFC74B /* PBXTargetDependency */,
+			);
+			name = SmartechReactProject;
+			productName = SmartechReactProject;
+			productReference = 13B07F961A680F5B00A75B9A /* SmartechReactProject.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CA0D026D2361A57800DFC74B /* NetcoreNSE */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA0D02772361A57800DFC74B /* Build configuration list for PBXNativeTarget "NetcoreNSE" */;
+			buildPhases = (
+				375B6B096D085FE73D828BC6 /* [CP] Check Pods Manifest.lock */,
+				CA0D026A2361A57800DFC74B /* Sources */,
+				CA0D026B2361A57800DFC74B /* Frameworks */,
+				CA0D026C2361A57800DFC74B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NetcoreNSE;
+			productName = NetcoreNSE;
+			productReference = CA0D026E2361A57800DFC74B /* NetcoreNSE.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		CA0D027F2361A6FC00DFC74B /* NetcoreNCE */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA0D02902361A6FC00DFC74B /* Build configuration list for PBXNativeTarget "NetcoreNCE" */;
+			buildPhases = (
+				975FCBFF1D7EC7E3FF03BC4D /* [CP] Check Pods Manifest.lock */,
+				CA0D027C2361A6FC00DFC74B /* Sources */,
+				CA0D027D2361A6FC00DFC74B /* Frameworks */,
+				CA0D027E2361A6FC00DFC74B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NetcoreNCE;
+			productName = NetcoreNCE;
+			productReference = CA0D02802361A6FC00DFC74B /* NetcoreNCE.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		83CBB9F71A601CBA00E9B192 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 940;
+				ORGANIZATIONNAME = Facebook;
+				TargetAttributes = {
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = Y344Y7796A;
+						ProvisioningStyle = Manual;
+					};
+					CA0D026D2361A57800DFC74B = {
+						CreatedOnToolsVersion = 11.1;
+						DevelopmentTeam = Y344Y7796A;
+						ProvisioningStyle = Manual;
+					};
+					CA0D027F2361A6FC00DFC74B = {
+						CreatedOnToolsVersion = 11.1;
+						DevelopmentTeam = Y344Y7796A;
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "SmartechReactProject" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				en,
+				Base,
+			);
+			mainGroup = 83CBB9F61A601CBA00E9B192;
+			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				13B07F861A680F5B00A75B9A /* SmartechReactProject */,
+				CA0D026D2361A57800DFC74B /* NetcoreNSE */,
+				CA0D027F2361A6FC00DFC74B /* NetcoreNCE */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		13B07F8E1A680F5B00A75B9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA0D026C2361A57800DFC74B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA0D027E2361A6FC00DFC74B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA0D028B2361A6FC00DFC74B /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle React Native code and images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+		};
+		156AE9F0760F40B4ED786CEB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartechReactProject/Pods-SmartechReactProject-frameworks.sh",
+				"${PODS_ROOT}/Netcore-Smartech-iOS-SDK/NetCorePush.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NetCorePush.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SmartechReactProject/Pods-SmartechReactProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		375B6B096D085FE73D828BC6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NetcoreNSE-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		975FCBFF1D7EC7E3FF03BC4D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NetcoreNCE-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2AD701617E2123DBA5BE7F0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SmartechReactProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD10A7F022414F080027D42C /* Start Packager */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Start Packager";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		13B07F871A680F5B00A75B9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				CA3DE67323796EBE000738CE /* DeeplinkManager.m in Sources */,
+				13B07FC11A68108700A75B9A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA0D026A2361A57800DFC74B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA0D02722361A57800DFC74B /* NotificationService.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA0D027C2361A6FC00DFC74B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA0D02882361A6FC00DFC74B /* NotificationViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CA0D02752361A57800DFC74B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CA0D026D2361A57800DFC74B /* NetcoreNSE */;
+			targetProxy = CA0D02742361A57800DFC74B /* PBXContainerItemProxy */;
+		};
+		CA0D028E2361A6FC00DFC74B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CA0D027F2361A6FC00DFC74B /* NetcoreNCE */;
+			targetProxy = CA0D028D2361A6FC00DFC74B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		13B07FB11A68108700A75B9A /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				13B07FB21A68108700A75B9A /* Base */,
+			);
+			name = LaunchScreen.xib;
+			path = SmartechReactProject;
+			sourceTree = "<group>";
+		};
+		CA0D02892361A6FC00DFC74B /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CA0D028A2361A6FC00DFC74B /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		13B07F941A680F5B00A75B9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14B770CA03A760A516339ED0 /* Pods-SmartechReactProject.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SmartechReactProject/SmartechReactProject.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = Y344Y7796A;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/smartech-react-native/ios",
+				);
+				INFOPLIST_FILE = SmartechReactProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.netcore.NetcoreApp;
+				PRODUCT_NAME = SmartechReactProject;
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.netcore.NetcoreApp";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		13B07F951A680F5B00A75B9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCFAFF6D517244741D4E56A2 /* Pods-SmartechReactProject.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SmartechReactProject/SmartechReactProject.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y344Y7796A;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/smartech-react-native/ios",
+				);
+				INFOPLIST_FILE = SmartechReactProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.netcore.NetcoreApp;
+				PRODUCT_NAME = SmartechReactProject;
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.netcore.NetcoreApp";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		83CBBA201A601CBA00E9B192 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		83CBBA211A601CBA00E9B192 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CA0D02782361A57800DFC74B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 516E921D974877ACB594865B /* Pods-NetcoreNSE.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = NetcoreNSE/NetcoreNSE.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = Y344Y7796A;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = NetcoreNSE/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.netcore.NetcoreApp.NetcoreNSE;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.netcore.NetcoreApp.NetcoreNSE";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		CA0D02792361A57800DFC74B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C66E68D3F21923694750B683 /* Pods-NetcoreNSE.release.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = NetcoreNSE/NetcoreNSE.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = Y344Y7796A;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = NetcoreNSE/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.netcore.NetcoreApp.NetcoreNSE;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.netcore.NetcoreApp.NetcoreNSE";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		CA0D02912361A6FC00DFC74B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F156B356FB98C8E4BFD5723F /* Pods-NetcoreNCE.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = NetcoreNCE/NetcoreNCE.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = Y344Y7796A;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = NetcoreNCE/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.netcore.NetcoreApp.NetcoreNCE;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.netcore.NetcoreApp.NetcoreNCE";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		CA0D02922361A6FC00DFC74B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10D9ECABB6C30324690B2CF0 /* Pods-NetcoreNCE.release.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = NetcoreNCE/NetcoreNCE.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = Y344Y7796A;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = NetcoreNCE/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.netcore.NetcoreApp.NetcoreNCE;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.netcore.NetcoreApp.NetcoreNCE";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "SmartechReactProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13B07F941A680F5B00A75B9A /* Debug */,
+				13B07F951A680F5B00A75B9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "SmartechReactProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83CBBA201A601CBA00E9B192 /* Debug */,
+				83CBBA211A601CBA00E9B192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA0D02772361A57800DFC74B /* Build configuration list for PBXNativeTarget "NetcoreNSE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA0D02782361A57800DFC74B /* Debug */,
+				CA0D02792361A57800DFC74B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA0D02902361A6FC00DFC74B /* Build configuration list for PBXNativeTarget "NetcoreNCE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA0D02912361A6FC00DFC74B /* Debug */,
+				CA0D02922361A6FC00DFC74B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
+}
