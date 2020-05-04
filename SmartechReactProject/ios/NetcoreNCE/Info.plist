@@ -41,5 +41,10 @@
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.usernotifications.content-extension</string>
 	</dict>
+	<key>SmartechKeys</key>
+	<dict>
+		<key>SmartechAppGroup</key>
+		<string>group.com.netcore.NetcoreApp</string>
+	</dict>
 </dict>
 </plist>

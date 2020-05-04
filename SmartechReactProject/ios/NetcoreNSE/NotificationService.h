@@ -7,7 +7,8 @@
 //
 
 #import <UserNotifications/UserNotifications.h>
+#import <NetCorePush/NetCorePush.h>
 
-@interface NotificationService : UNNotificationServiceExtension
+@interface NotificationService : SMTNotificationServiceExtension
 
 @end

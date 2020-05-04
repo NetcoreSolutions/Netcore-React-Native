@@ -69,7 +69,7 @@ export class Other extends Component<Props> {
         );
       })
     } else {
-      NetcoreSDK.getNotifications(10)
+     /* NetcoreSDK.getNotifications(100)
       .then(value => {
         value = JSON.stringify(value);
 	console.log(value);
@@ -91,17 +91,20 @@ export class Other extends Component<Props> {
           { cancelable: false }
         );
       })
-      .catch(reason => console.log(reason));
+      .catch(reason => console.log(reason));*/
+      const { navigate } = this.props.navigation;
+      navigate("NotificationsScreen", { name: "Notifications Screen" });
     }
+
   };
   callChangeToken = () => {
     const newToken = this.state.Token;
-    NetcoreSDK.setPushToken(newToken)
+    NetcoreSDK.setDevicePushToken(newToken)
     .then(value => console.log(value))
     .catch(reason => console.log(reason));
   };
   callGetToken = () => {
-    NetcoreSDK.getPushToken()
+    NetcoreSDK.getDevicePushToken()
     .then(value => {
       Alert.alert(
         'New Token',
@@ -124,7 +127,7 @@ export class Other extends Component<Props> {
     .catch(reason => console.log(reason));
   };
   callGetGUID = () => {
-    NetcoreSDK.getGUID()
+    NetcoreSDK.getDeviceUniqueId()
     .then(value => {
       Alert.alert(
         'GUID',
@@ -149,10 +152,10 @@ export class Other extends Component<Props> {
   callGetUnreadNotificationsCount = () => {
       NetcoreSDK.getUnreadNotificationsCount()
       .then(value => {
-      console.log(value);
+      console.log("count ",value);
         Alert.alert(
           'UnreadNotificationsCount',
-          value,
+          value+"",
           [
             {
               text: 'Cancel',

@@ -46,13 +46,13 @@ export default class App extends React.Component {
 	handleDeeplink(event) {
     console.log("Smartech: deeplink: " + event.deeplink);
     console.log("Smartech: customPayload: " + event.customPayload);
-    console.log("Smartech: this.props: " + JSON.stringify(this.props));
-    const {navigate} = this.props.navigation;
-    if (event.deeplink == "smartech://image") {
-      navigate('Profile');
-    }
-    if (event.deeplink == "smartech://custom") {
-      navigate('Custom');
-    }
+    // console.log("Smartech: this.props: " + JSON.stringify(this.props));
+    // const {navigate} = this.props.navigation;
+    // if (event.deeplink == "smartech://image") {
+    //   navigate('Profile');
+    // }
+    // if (event.deeplink == "smartech://custom") {
+    //   navigate('Custom');
+    // }
 	}
 }

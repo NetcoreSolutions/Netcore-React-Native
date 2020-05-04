@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { AsyncStorage, ScrollView, StyleSheet, Text, View } from "react-native";
+import { AsyncStorage, ScrollView, StyleSheet, Text, View, Alert} from "react-native";
 import Button from "./styling/Button";
 
 const NetcoreSDK = require("smartech-react-native");
@@ -28,6 +28,8 @@ export class Home extends Component<Props> {
 
           <Button onPress={this.callOPTIn}>OPT In</Button>
           <Button onPress={this.callOPTOut}>OPT Out</Button>
+	      <Button onPress={this.callOPTStatus}>Get Opt Status</Button>
+	      <Button onPress={this.callGetUserIdentity}>Get UserIdentity</Button>
 
           <Button onPress={this.callOther}>Other Functions</Button>
           <Button onPress={this.callCustom}>Custom Data</Button>
@@ -38,32 +40,85 @@ export class Home extends Component<Props> {
     );
   }
   callPageBrowse = () => {
-    console.log("data->", payloadata);
-    NetcoreSDK.track("Page Browse", payloadata);
+    this.trackEvent("Page Browse", payloadata)
+
   };
   callCheckOut = () => {
-    console.log("data->", payloadata);
-    NetcoreSDK.track("Checkout", payloadata);
+    this.trackEvent("Checkout", payloadata)
   };
   callCartExpired = () => {
-    console.log("data->", payloadata);
-   NetcoreSDK.track("Cart Expired", payloadata);
+    this.trackEvent("Cart Expired", payloadata)
   };
 
   callAddToCart = () => {
-    console.log("callAddToCart->", payloadata);
-    NetcoreSDK.track("Add To Cart", payloadata);
+    this.trackEvent("Add To Cart", payloadata)
   };
   callRemoveFromCart = () => {
-    console.log("data->", payloadata);
-    NetcoreSDK.track("Remove From Cart", payloadata);
+    this.trackEvent("Remove From Cart", payloadata)
+  };
+
+  trackEvent = (eventName, payloadata) => {
+    	console.log("Name->", eventName);
+    	console.log("data->", payloadata);
+	    NetcoreSDK.trackEvent(eventName, payloadata);
   };
 
   callOPTIn = () => {
-    NetcoreSDK.optOut(false);
+	NetcoreSDK.optOut(false);
   };
   callOPTOut = () => {
-    NetcoreSDK.optOut(true);
+	NetcoreSDK.optOut(true);
+  };
+  callOPTStatus = () => {
+	NetcoreSDK.getOptOutStatus()
+          .then(value => {
+            value = JSON.stringify(value);
+    	console.log(value);
+            Alert.alert(
+              'Result Data',
+              value,
+              [
+                {
+                  text: 'Cancel',
+                  onPress: () => console.log('Cancel Pressed'),
+                  style: 'cancel'
+                },
+                {
+                  text: 'OK',
+                  onPress: () => console.log('Ok Pressed'),
+                  style: 'cancel'
+                }
+              ],
+              { cancelable: false }
+            );
+          })
+          .catch(reason => console.log(reason));
+  };
+
+    callGetUserIdentity = () => {
+	NetcoreSDK.getUserIdentity()
+          .then(value => {
+            value = JSON.stringify(value);
+    	console.log(value);
+            Alert.alert(
+              'Result Data',
+              value,
+              [
+                {
+                  text: 'Cancel',
+                  onPress: () => console.log('Cancel Pressed'),
+                  style: 'cancel'
+                },
+                {
+                  text: 'OK',
+                  onPress: () => console.log('Ok Pressed'),
+                  style: 'cancel'
+                }
+              ],
+              { cancelable: false }
+            );
+          })
+          .catch(reason => console.log(reason));
   };
 
   callProfile = () => {
@@ -85,8 +140,8 @@ export class Home extends Component<Props> {
   };
   callLogOut = () => {
     const { navigate } = this.props.navigation;
-    NetcoreSDK.logout();
-    NetcoreSDK.clearIdentity();
+    NetcoreSDK.logoutAndClearUserIdentity(true);
+//    NetcoreSDK.logout();
     AsyncStorage.setItem("UserIdentity", "");
     navigate("LoginScreen", { name: "Login Screen" });
   };

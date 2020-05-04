@@ -22,16 +22,17 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   // Do any required interface initialization here.
-  [[NetCoreNotificationService sharedInstance] contentViewDidLoad:_customBgView];
+  [[Smartech sharedInstance] loadCustomNotificationContentView:_customBgView];
 }
 
 - (void)didReceiveNotification:(UNNotification *)notification {
-  [[NetCoreNotificationService sharedInstance] didReceiveNotification:notification];
+  [[Smartech sharedInstance] didReceiveCustomNotification:notification];
 }
 
 -(void)didReceiveNotificationResponse:(UNNotificationResponse *)response completionHandler:(void (^)(UNNotificationContentExtensionResponseOption))completion {
-  [[NetCoreNotificationService sharedInstance] didReceiveNotificationResponse:response completionHandler:(void (^)(UNNotificationContentExtensionResponseOption))completion];
-  
+  [[Smartech sharedInstance] didReceiveCustomNotificationResponse:response completionHandler:^(UNNotificationContentExtensionResponseOption option) {
+    completion(option);
+  }];
 }
 
 @end

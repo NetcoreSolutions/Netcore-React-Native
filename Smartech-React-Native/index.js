@@ -123,22 +123,71 @@ const Smartech = {
         }
     },
 
-    handleNotification: async notificationData => {
+    setUserIdentity: (identity) => {
+        SMTSmartechReactNative.setUserIdentity(identity);
+    },
+    clearUserIdentity: () => {
+        SMTSmartechReactNative.clearUserIdentity();
+    },
+    getUserIdentity: async () => {
         try {
-            return await SMTSmartechReactNative.handleNotification(notificationData);
+            return await SMTSmartechReactNative.getUserIdentity();
+        }
+        catch (e) {
+            throw e;
+        }
+    },
+    logoutAndClearUserIdentity: (clearUserIdentity) => {
+        SMTSmartechReactNative.logoutAndClearUserIdentity(clearUserIdentity);
+    },
+    updateUserProfile: (profileDetails) => {
+        SMTSmartechReactNative.updateUserProfile(profileDetails);
+    },
+    trackEvent: (eventName, eventValue) => {
+        SMTSmartechReactNative.trackEvent(eventName, eventValue);
+    },
+    setDevicePushToken: (token) => {
+        SMTSmartechReactNative.setDevicePushToken(token);
+    },
+    getDevicePushToken: async () => {
+        try {
+            return await SMTSmartechReactNative.getDevicePushToken();
+        }
+        catch (e) {
+            throw e;
+        }
+    },
+    getOptOutStatus: async () => {
+        try {
+            return await SMTSmartechReactNative.getOptOutStatus();
         }
         catch (e) {
             throw e;
         }
     },
 
-    markNotificationAsRead: async (trID, deeplink) => {
+    getDeviceUniqueId: async () => {
         try {
-            return await SMTSmartechReactNative.markNotificationAsRead(trID, deeplink);
+            return await SMTSmartechReactNative.getDeviceUniqueId();
         }
         catch (e) {
             throw e;
         }
+    },
+
+    handlePushNotification: async notificationData => {
+        try {
+            return await SMTSmartechReactNative.handlePushNotification(notificationData);
+        }
+        catch (e) {
+            throw e;
+        }
+    },
+    deliverNotificationEvent: (json, isAmplified) => {
+        SMTSmartechReactNative.deliverNotificationEvent(json, isAmplified);
+    },
+    openNotificationEvent: (trID, deeplink, payload) => {
+        SMTSmartechReactNative.openNotificationEvent(trID, deeplink, payload);
     }
 };
 

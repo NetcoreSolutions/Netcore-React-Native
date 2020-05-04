@@ -5,11 +5,11 @@
  
  @author Netcore Solutions
  @copyright  2019 Netcore Solutions
- @version    2.3.9 */
+ @version    2.5.0 */
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "SMTNotification.h"
+#import "NCNotification.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -79,13 +79,10 @@ NS_ASSUME_NONNULL_BEGIN
  */
 -(void)setDeepLinkQueryParameters:(NSDictionary *)notiData;
 /*
- @Method checkSessionId: this method checks for session id expiration and renews it.
+ @Method resetSession: this method resets the session for the user.
  */
--(void)checkSessionId;
-/*
- @Method addDeepLinkParametersInDict: adds deeplink parameters to every request.
- */
--(void)addDeepLinkParametersInDict:(NSMutableDictionary *)requestDict;
+- (void)resetSession;
+
 /*
  @Method setUpAppGroup: this method use to setup app groups
  @param  appGroup - contain appGroup string. Usually, group.<your-bundle-identifier>. eg., group.com.CompanyName.productName
@@ -96,6 +93,11 @@ NS_ASSUME_NONNULL_BEGIN
  @param  optFlag - If it is True, then it will stop processing user's events and user will not receive any kind of Push/InApp Notifications from Panel. Default Value is False.
  */
 -(void)optOut:(BOOL)optFlag;
+/*
+@Method getOptOutStatus: this method is used get the status of GDPR compliance.
+@return - BOOL
+*/
+-(BOOL)getOptOutStatus;
 /*
  @Method printDeviceToken: this method is used to print device token.
  */

@@ -11,6 +11,7 @@
 }
 RCT_EXPORT_MODULE()
 
+#pragma mark - v2 methods
 RCT_EXPORT_METHOD(setIdentity:(NSString *) identity
                   identityResolver:(RCTPromiseResolveBlock)resolve
                   identityRejecter:(RCTPromiseRejectBlock)reject)
@@ -115,5 +116,62 @@ RCT_EXPORT_METHOD(setPushToken:(NSString *)pushToken) {
     NSLog(@"this functionality is not for iOS");
 }
 
-@end
+#pragma mark - v2.5.0 methods
+RCT_EXPORT_METHOD(setUserIdentity:(NSString *)identity) {
+    [[Smartech sharedInstance] setUserIdentity:identity];
+}
 
+RCT_EXPORT_METHOD(clearUserIdentity) {
+    [[Smartech sharedInstance] clearUserIdentity];
+}
+
+RCT_REMAP_METHOD(getUserIdentity, userIdentityResolver:(RCTPromiseResolveBlock)resolve userIdentityRejecter:(RCTPromiseRejectBlock)reject) {
+    
+    NSString *userIdentity = [[Smartech sharedInstance] getUserIdentity];
+    resolve(userIdentity);
+}
+
+RCT_EXPORT_METHOD(login:(NSString *)identity) {
+    [[Smartech sharedInstance] login:identity];
+}
+
+RCT_EXPORT_METHOD(logoutAndClearUserIdentity:(BOOL)clearUserIdentity) {
+    [[Smartech sharedInstance] logoutAndClearUserIdentity:clearUserIdentity];
+}
+
+RCT_EXPORT_METHOD(updateUserProfile:(NSDictionary *)profileDetails) {
+    [[Smartech sharedInstance] updateUserProfile:profileDetails];
+}
+
+RCT_EXPORT_METHOD(trackEvent:(NSString *)eventName andValue:(NSDictionary *)eventValue) {
+    [[Smartech sharedInstance] trackEvent:eventName andPayload:eventValue];
+}
+
+RCT_REMAP_METHOD(getDevicePushToken, getDevicePushTokenResolver:(RCTPromiseResolveBlock)resolve getDevicePushTokenRejecter:(RCTPromiseRejectBlock)reject) {
+    
+    NSString *token = [[Smartech sharedInstance] getDevicePushToken];
+    resolve(token);
+}
+
+RCT_REMAP_METHOD(getOptOutStatus, optStatusResolver:(RCTPromiseResolveBlock)resolve optStatusRejecter:(RCTPromiseRejectBlock)reject) {
+    
+    BOOL optOutStatus = [[Smartech sharedInstance] getOptOutStatus];
+    resolve(@(optOutStatus));
+}
+
+RCT_EXPORT_METHOD(setOptOutStatus:(BOOL)optOutFlag) {
+    [[Smartech sharedInstance] setOptOutStatus:optOutFlag];
+}
+
+RCT_REMAP_METHOD(getDeviceUniqueId, deviceUniqueIdResolver:(RCTPromiseResolveBlock)resolve deviceUniqueIdRejecter:(RCTPromiseRejectBlock)reject) {
+    
+    NSString *guid = [[Smartech sharedInstance] getDeviceGuid];
+    resolve(guid);
+}
+
+RCT_EXPORT_METHOD(trackNotificationOpenEvent:(NSDictionary *)userInfo shouldHandleDeeplink:(BOOL)shouldHandle withDeeplink:(NSString *)deeplink) {
+    
+    [[Smartech sharedInstance] trackNotificationOpenEvent:userInfo shouldHandleDeeplink:shouldHandle withDeeplink:deeplink];
+}
+
+@end

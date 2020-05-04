@@ -52,6 +52,13 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
+	<key>SmartechKeys</key>
+	<dict>
+		<key>SmartechAppGroup</key>
+		<string>group.com.netcore.NetcoreApp</string>
+		<key>SmartechAppId</key>
+		<string>288ab40fa8600ed2886698c59c01370f</string>
+	</dict>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>

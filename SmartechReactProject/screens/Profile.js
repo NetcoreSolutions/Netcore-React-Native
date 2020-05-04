@@ -100,7 +100,7 @@ export class Profile extends Component<Props> {
       WEBSITE: WEBSITE
     };
 
-    NetcoreSDK.profile(payloadata)
+     /*NetcoreSDK.profile(payloadata)
       .then(value => {
         console.log("Cancel Pressed");
         Alert.alert(
@@ -119,20 +119,8 @@ export class Profile extends Component<Props> {
       })
       .catch(reason => {
         console.log("catch");
-        Alert.alert(
-          "Error occured",
-          reason,
-          [
-            {
-              text: "Cancel",
-              onPress: () => console.log("Cancel Pressed"),
-              style: "cancel"
-            },
-            { text: "OK", onPress: () => navigate("HomeScreen", { name: "Home Screen" }) }
-          ],
-          { cancelable: false }
-        );
-      });
+      });*/
+    NetcoreSDK.updateUserProfile(payloadata);
   };
 }
 

@@ -58,10 +58,9 @@ export class Custom extends Component<Props> {
     const DATA = this.state.DATA;
     const DATA1 = this.state.DATA1;
 
-    console.log(NAME, DATA, DATA1);
-
-    NetcoreSDK.track(NAME.trim(), mypayloadata);
-    NetcoreSDK.track(NAME.trim(), JSON.parse(DATA1));
+    console.log(NAME, DATA);
+	console.log("Text box 2", JSON.parse(DATA1));
+    NetcoreSDK.trackEvent(NAME.trim(), JSON.parse(DATA1));
   };
 }
 

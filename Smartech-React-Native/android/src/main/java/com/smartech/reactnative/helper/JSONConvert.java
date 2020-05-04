@@ -12,7 +12,7 @@ import java.util.Iterator;
 
 public class JSONConvert {
 
-    public static WritableMap toWritableMap(JSONObject jsonObject) throws JSONException {
+    private static WritableMap toWritableMap(JSONObject jsonObject) throws JSONException {
         WritableMap writableMap = Arguments.createMap();
         Iterator iterator = jsonObject.keys();
         while (iterator.hasNext()) {

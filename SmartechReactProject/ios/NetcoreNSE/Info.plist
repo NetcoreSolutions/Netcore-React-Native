@@ -32,5 +32,10 @@
 		<key>NSExtensionPrincipalClass</key>
 		<string>NotificationService</string>
 	</dict>
+	<key>SmartechKeys</key>
+	<dict>
+		<key>SmartechAppGroup</key>
+		<string>group.com.netcore.NetcoreApp</string>
+	</dict>
 </dict>
 </plist>

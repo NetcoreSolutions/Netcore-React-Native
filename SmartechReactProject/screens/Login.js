@@ -51,7 +51,7 @@ export class Login extends Component<Props> {
       const email = this.state.UserIdentity;
       console.log("UserIdentity->" + email);
       if (email !== "" && email != null) {
-        this.setSkip();
+
       }
     } catch (error) {
       // Error retrieving data
@@ -84,6 +84,11 @@ export class Login extends Component<Props> {
  
   getCustomData = () => {
     console.log("getCustomData->" + JSON.stringify(this.props.screenProps));
+    NetcoreSDK.getDevicePushToken()
+    .then(value => {
+      console.log(value);
+    })
+    .catch(reason => console.log(reason));
   };
 
 

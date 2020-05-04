@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Platform, View, ActivityIndicator, FlatList, Text, Image, Alert } from 'react-native';
+import { StyleSheet, Platform, View, ActivityIndicator, FlatList, Text, Image, Alert, TouchableWithoutFeedback } from 'react-native';
 import Button from './styling/Button';
 
 const NetcoreSDK = require("smartech-react-native");
@@ -16,7 +16,7 @@ export class Notifications extends Component<Props> {
     this.callGetNotification();
  }
   callGetNotification = () => {
-      NetcoreSDK.getNotifications(10)
+      NetcoreSDK.getNotifications(100)
       .then(value => {
 	
         let jsonObject = JSON.stringify(value);
@@ -62,17 +62,28 @@ FlatListItemSeparator = () => {
      <FlatList
 	data={this.state.dataSource}
 	renderItem={({item}) =>
+	<TouchableWithoutFeedback onPress={ () => this.actionOnRow(item)}>
 	 <View style={styles.container}>
 	    <Text style={styles.textView} >Title: {JSON.parse(item.message).data.title}</Text>
 	    <Text style={styles.textView} >Message: {JSON.parse(item.message).data.message}</Text>
 	    <Text style={styles.textView} >Status: {item.status}</Text>
 	    <Text style={styles.textView} >-----------------</Text>
 	 </View>
+	 </TouchableWithoutFeedback>
 	}
       />
      </View>
    );
  }
+ actionOnRow(item) {
+    var trID = JSON.parse(item.message).data.trid;
+    var deeplink = JSON.parse(item.message).data.deeplink;
+    var payload = JSON.parse(item.message).data.customPayload;
+     console.log('Selected Item :',item);
+     console.log('Selected Item :',trID);
+     console.log('Selected Item :',deeplink);
+     console.log('Selected Item :',payload);
+  }
 }
 const styles = StyleSheet.create({
  
