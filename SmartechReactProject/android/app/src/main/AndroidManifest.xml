@@ -36,9 +36,13 @@
             android:name="SMT_APP_ID"
             android:value="d76257514ef537f50844d02065ed0714" />
 
-<!--        <meta-data-->
-<!--            android:name="SMT_APP_ID"-->
-<!--            android:value="12e6345403226a2403a33700b5facc7f" />-->
+        <!--<meta-data
+            android:name="SMT_APP_ID"
+            android:value="12e6345403226a2403a33700b5facc7f" />-->
+
+        <!--<meta-data
+            android:name="SMT_APP_ID"
+            android:value="bd1ec4b5e8ee099b647c8909181cf90d" />-->
 
         <meta-data
             android:name="SMT_USE_AD_ID"
@@ -52,6 +56,9 @@
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-6483410411418762~8586996255" />
+        <meta-data
+            android:name="SMT_BOXX_ENABLED"
+            android:value="1" />
 
         <service android:name=".MyFirebaseMessagingService">
             <intent-filter>

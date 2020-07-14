@@ -29,6 +29,7 @@
   rootView.backgroundColor = [[UIColor alloc] initWithRed:1.0f green:1.0f blue:1.0f alpha:1];
   
   [[Smartech sharedInstance] initSDKWithDelegate:self withLaunchOptions:launchOptions];
+  [[Smartech sharedInstance] setDebugLevel:NCLogLevelVerbose];
   if (@available(iOS 10.0, *)) {
     [UNUserNotificationCenter currentNotificationCenter].delegate = self;
   }

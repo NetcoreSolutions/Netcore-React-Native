@@ -26,16 +26,35 @@ RCT_EXPORT_MODULE();
 }
 
 - (void)sendDeeplink:(NSNotification *)notifcation {
-  NSDictionary<NSString *, id> *payload = @{@"deeplink": notifcation.userInfo[@"deeplink"],@"customPayload":notifcation.userInfo[@"customPayload"],@"userInfo":notifcation.userInfo[@"userInfo"]};
+  NSDictionary<NSString *, id> *payload = @{@"deeplink": notifcation.userInfo[@"deeplink"],
+                                            @"customPayload":notifcation.userInfo[@"customPayload"],
+                                            @"userInfo":notifcation.userInfo[@"userInfo"]};
   [self sendEventWithName:@"SMTDeeplink" body:payload];
 }
 
+//This deeplink method is used for v2
 + (void)emitEventWithDeeplink:(NSString *)deeplink customPayload:(NSDictionary *)customPayload andPayload:(NSDictionary *)payload {
   NSString *deeplinkString = deeplink ? deeplink : @"";
   NSDictionary *customPayloadDictionary = customPayload ? customPayload : @{};
   NSDictionary *payloadDictionary = payload ? payload : @{};
   
-  NSDictionary<NSString *, id> *userInfo = @{@"deeplink": deeplinkString, @"customPayload": customPayloadDictionary,@"userInfo":payloadDictionary};
+  NSDictionary<NSString *, id> *userInfo = @{@"deeplink": deeplinkString,
+                                             @"customPayload": customPayloadDictionary,
+                                             @"userInfo":payloadDictionary};
+  [[NSNotificationCenter defaultCenter] postNotificationName:@"SMTDeeplink"
+                                                      object:self
+                                                    userInfo:userInfo];
+}
+
+//This deeplink method is used for v2.5
++ (void)emitEventWithDeeplink:(NSString *)deeplink customPayload:(NSDictionary *)customPayload {
+  NSString *deeplinkString = deeplink ? deeplink : @"";
+  NSDictionary *customPayloadDictionary = customPayload ? customPayload : @{};
+  NSDictionary *payloadDictionary = @{};
+  
+  NSDictionary<NSString *, id> *userInfo = @{@"deeplink": deeplinkString,
+                                             @"customPayload": customPayloadDictionary,
+                                             @"userInfo":payloadDictionary};
   [[NSNotificationCenter defaultCenter] postNotificationName:@"SMTDeeplink"
                                                       object:self
                                                     userInfo:userInfo];

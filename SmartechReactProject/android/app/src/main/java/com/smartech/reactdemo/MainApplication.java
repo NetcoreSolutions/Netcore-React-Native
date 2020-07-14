@@ -13,8 +13,8 @@ import com.facebook.soloader.SoLoader;
 import java.lang.ref.WeakReference;
 import java.util.List;
 
-import in.netcore.smartechfcm.NetcoreSDK;
 import in.netcore.smartechfcm.Smartech;
+import in.netcore.smartechfcm.logger.NCLogger;
 import io.invertase.firebase.messaging.RNFirebaseMessagingPackage;
 import io.invertase.firebase.notifications.RNFirebaseNotificationsPackage;
 
@@ -52,6 +52,7 @@ public class MainApplication extends MultiDexApplication implements ReactApplica
         super.onCreate();
         SoLoader.init(this, /* native exopackage */ false);
         Smartech.Companion.getInstance(new WeakReference<>(getApplicationContext())).initializeSdk(this);
+        Smartech.Companion.getInstance(new WeakReference<>(getApplicationContext())).setDebugLevel(NCLogger.Level.LOG_LEVEL_VERBOSE);
         Smartech.Companion.getInstance(new WeakReference<>(getApplicationContext())).setPushIconColor(Color.RED);
     }
 }

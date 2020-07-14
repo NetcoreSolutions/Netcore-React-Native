@@ -17,6 +17,7 @@ import Profile from './screens/Profile';
 import Other from './screens/Other';
 import Custom from './screens/Custom';
 import Notifications from './screens/Notifications';
+import Boxx from './screens/Boxx';
 
 const AppNavigator = createStackNavigator({
   LoginScreen: { screen: Login },
@@ -24,7 +25,8 @@ const AppNavigator = createStackNavigator({
   ProfileScreen: { screen: Profile, path: 'profile'},
   OtherScreen: { screen: Other },
   CustomScreen: { screen: Custom },
-  NotificationsScreen : {screen: Notifications }
+  NotificationsScreen : {screen: Notifications },
+  BoxxScreen : {screen: Boxx }
 });
 const AppContainer = createAppContainer(AppNavigator);
 const { DeeplinkManager } = NativeModules;

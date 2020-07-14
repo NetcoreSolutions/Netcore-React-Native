@@ -4,6 +4,7 @@ import Button from "./styling/Button";
 const NetcoreSDK = require("smartech-react-native");
 import firebase from 'react-native-firebase';
 
+
 export class Login extends Component<Props> {
   constructor(props) {
     super(props);
@@ -12,6 +13,7 @@ export class Login extends Component<Props> {
       UserIdentity: ""
     };
   }
+
   componentDidMount() {
     AsyncStorage.getItem("UserIdentity")
       .then(value => {
@@ -28,8 +30,8 @@ export class Login extends Component<Props> {
                 }
             })
             .done();
-
   }
+
   render() {
     return (
       <View style={styles.container}>

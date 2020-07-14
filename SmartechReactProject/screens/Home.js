@@ -33,6 +33,7 @@ export class Home extends Component<Props> {
 
           <Button onPress={this.callOther}>Other Functions</Button>
           <Button onPress={this.callCustom}>Custom Data</Button>
+          <Button onPress={this.callBoxx}>Boxx</Button>
           <Button onPress={this.callLogOut}>Log Out</Button>
           <Text style={styles.welcome} />
         </ScrollView>
@@ -52,6 +53,7 @@ export class Home extends Component<Props> {
 
   callAddToCart = () => {
     this.trackEvent("Add To Cart", payloadata)
+    NetcoreSDK.getBoxxReco()
   };
   callRemoveFromCart = () => {
     this.trackEvent("Remove From Cart", payloadata)
@@ -133,6 +135,10 @@ export class Home extends Component<Props> {
   callCustom = () => {
     const { navigate } = this.props.navigation;
     navigate("CustomScreen", { name: "Custom Screen" });
+  };
+  callBoxx = () => {
+    const { navigate } = this.props.navigation;
+    navigate("BoxxScreen", { name: "Boxx Screen" });
   };
   callNotifications = () => {
     const { navigate } = this.props.navigation;

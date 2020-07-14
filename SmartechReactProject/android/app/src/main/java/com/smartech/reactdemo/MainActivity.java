@@ -47,7 +47,7 @@ public class MainActivity extends ReactActivity {
                             // String trid = jsonObject.optString("trid");
                             JSONObject data = jsonObject.optJSONObject("data");
                             String trid = data.optString("trid");
-                            NetcoreSDK.openNotificationEvent(MainActivity.this, trid, "deepLinkUrl", jsonObject.toString());
+                            NetcoreSDK.openNotificationEvent(MainActivity.this, jsonObject);
                         }
                         for (String key : extra.keySet()) {
                             Log.e(TAG, key + " : " + extra.getString(key));
